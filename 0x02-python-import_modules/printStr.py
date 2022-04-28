@@ -1,3 +1,2 @@
-#!/usr/bin/python
-def str():
-    print(f"#pythoniscool")
+#!/usr/bin/python3
+print(f"#pythoniscool")
