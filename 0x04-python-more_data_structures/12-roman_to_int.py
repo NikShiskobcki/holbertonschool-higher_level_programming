@@ -17,6 +17,9 @@ def conv(i):
 
 
 def roman_to_int(roman_string):
+    if roman_string == None:
+        return 0
+
     res = 0
     for i in range(len(roman_string)):
         value = conv(roman_string[i])
