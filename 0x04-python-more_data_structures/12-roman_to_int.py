@@ -17,17 +17,17 @@ def conv(i):
 
 
 def roman_to_int(roman_string):
-    if !roman_string and type(roman_string) is not str:
-        return 0
-
-    res = 0
-    for i in range(len(roman_string)):
-        value = conv(roman_string[i])
-        if len(roman_string) > i+1:
-            if value < conv(roman_string[i+1]):
-                res = res - value
+    if roman_string and type(roman_string) is str:
+        res = 0
+        for i in range(len(roman_string)):
+            value = conv(roman_string[i])
+            if len(roman_string) > i+1:
+                if value < conv(roman_string[i+1]):
+                    res = res - value
+                else:
+                    res = res + value
             else:
                 res = res + value
-        else:
-            res = res + value
-    return res
+        return res
+    else:
+        return 0
