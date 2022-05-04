@@ -17,7 +17,7 @@ def conv(i):
 
 
 def roman_to_int(roman_string):
-    if roman_string == None:
+    if !roman_string and type(roman_string) is not str:
         return 0
 
     res = 0
