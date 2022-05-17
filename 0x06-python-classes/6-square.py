@@ -5,7 +5,7 @@
 class Square:
     """class square"""
 
-    def __init__(self, size=0, position=(0, 0))):
+    def __init__(self, size=0, position=(0, 0)):
         """init class"""
         self.size = size
         self.position = position
@@ -14,7 +14,6 @@ class Square:
         """current square area"""
         return self.__size ** 2
 
-    
     @property
     def size(self):
         """retrieves size"""
@@ -28,7 +27,6 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-
 
     @property
     def position(self):
@@ -46,8 +44,6 @@ class Square:
                 (value[1] < 0)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
-
-
 
     def my_print(self):
         """prints square to stdout"""
