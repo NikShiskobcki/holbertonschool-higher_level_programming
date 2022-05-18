@@ -14,7 +14,7 @@ class Rectangle:
     def width(self):
         """width getter"""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """width setter"""
