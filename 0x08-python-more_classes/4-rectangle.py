@@ -62,6 +62,7 @@ class Rectangle:
                 if (i != self.height - 1):
                     rtg += "\n"
             return rtg
+
     def __repr__(self):
         """prints representation"""
         return ("Rectangle(" + str(self.width) + ", " + str(self.height) + ")")
