@@ -15,13 +15,13 @@ strings
 	My name is Michael 
 
 	>>> say_my_name("", "Scott")
-	My name is Scott
+	My name is  Scott
 
 	>>> say_my_name(" ", "Scott")
 	My name is   Scott
 
 	>>> say_my_name("", "")
-	My name is   
+	My name is  
 
 ========================
 chars
