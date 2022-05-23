@@ -1,0 +1,45 @@
+====================
+module import
+====================
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+SUCCESS CASES
+===================
+text is string
+===================
+
+	>>> text_indentation("aa.a")
+	aa.
+	<BLANKLINE>
+	a
+
+	>>> text_indentation("Holberton?School")
+	Holberton?
+	<BLANKLINE>
+	School
+
+	>>> text_indentation("Cohort:17")
+	Cohort:
+	<BLANKLINE>
+	17
+
+	>>> text_indentation("Holberton School")
+	Holberton School
+
+
+====================
+text is not string
+====================
+
+	>>> text_indentation()
+	Traceback (most recent call last):
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+	>>> text_indentation(12.2)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+	>>> text_indentation((12, 11))
+	Traceback (most recent call last):
+	TypeError: text must be a string
