@@ -25,7 +25,7 @@ matrix with integers, div float > 0
 	[[4.0, 4.0, 4.0], [4.0, 4.0, 4.0]]
 
 	>>> matrix_divided(matrix, 2.5)
-	[[0.8, 0.8, 0.8][0.8, 0.8, 0.8]]
+	[[0.8, 0.8, 0.8], [0.8, 0.8, 0.8]]
 
 ==================================
 matrix with integers, div = 0
@@ -39,7 +39,7 @@ matrix with integers, div = 0
 matrix not of int or float
 =================================
 
-	>>> matrix_divided([["a", 2, 3],[1, 2, 3]], 1)
+	>>> matrix_divided([["a", 2, 3], [1, 2, 3]], 1)
 	Traceback (most recent call last):
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
@@ -55,7 +55,7 @@ matrix with int, div not int or float
 rows with different length
 ===================================
 
-	>>> matrix_divided([[1, 2][1, 2, 3]], 2)
+	>>> matrix_divided([[1, 2], [1, 2, 3]], 2)
 	Traceback (most recent call last):
 	TypeError: Each row of the matrix must have the same size
 
