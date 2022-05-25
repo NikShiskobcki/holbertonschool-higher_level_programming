@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """add integer function"""
 
+
 def add_integer(a, b=98):
     """adds integers"""
     if type(a) is not int and type(a) is not float:
