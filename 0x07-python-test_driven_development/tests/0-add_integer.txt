@@ -79,7 +79,7 @@ error raising if input is None
 float overflow and NaN
 ===================================
 
-	>>> add_integer(NaN)
+	>>> add_integer(float('NaN'), 9)
 	Traceback (most recent call last):
 	ValueError: cannot convert float NaN to integer
 
