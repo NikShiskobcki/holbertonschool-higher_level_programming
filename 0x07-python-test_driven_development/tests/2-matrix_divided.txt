@@ -27,6 +27,9 @@ matrix with integers, div float > 0
 	>>> matrix_divided(matrix, 2.5)
 	[[0.8, 0.8, 0.8], [0.8, 0.8, 0.8]]
 
+	>>> matrix_divided(matrix, float('inf'))
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
 ==================================
 matrix with integers, div = 0
 ==================================
@@ -67,3 +70,13 @@ matrix not list
 	Traceback (most recent call last):
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	
+=============================
+missing arguments
+=============================
+	>>> matrix_divided()
+	Traceback (most recent call last):
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+	>>> matrix_divided(matrix)
+	Traceback (most recent call last):
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
