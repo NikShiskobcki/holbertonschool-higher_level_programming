@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """indents text"""
 
+
 def text_indentation(text):
     """indents text"""
     if type(text) is not str:
