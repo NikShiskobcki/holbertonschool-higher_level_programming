@@ -37,7 +37,7 @@ class TestMaxInteger(unittest.TestCase):
         t = [1, 15, 2]
         self.assertEqual(max_integer(t), 15)
 
-    def test 6(self):
+    def test6(self):
         """test max at the end"""
         t = [1, 2, 15]
         self.assertEqual(max_integer(t), 15)
