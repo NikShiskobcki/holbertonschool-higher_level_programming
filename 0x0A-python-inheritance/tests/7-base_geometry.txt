@@ -1,0 +1,52 @@
+=============
+import module
+=============
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+SUCCESS CASES
+=================
+integer
+=================
+
+	>>> bgeo = BaseGeometry()
+	>>> bgeo.integer_validator("lenght", 5)
+
+=================
+missing arguments
+=================
+
+	>>> bgeo = BaseGeometry()
+	>>> bgeo.integer_validator()
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+	>>> bgeo = BaseGeometry()
+	>>> bgeo.integer_validator(5)
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+	>>> bgeo = BaseGeometry()
+	>>> bgeo.integer_validator("x")
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+===================
+value not int
+===================
+
+	>>> bgeo = BaseGeometry()
+	>>> bgeo.integer_validator("x", 2.5)
+	Traceback (most recent call last):
+	TypeError: x must be an integer
+
+	>>> bgeo = BaseGeometry()
+	>>> bgeo.integer_validator("x", None)
+	Traceback (most recent call last):
+	TypeError: x must be an integer
+
+	>>> bgeo = BaseGeometry()
+	>>> bgeo.integer_validator("x", float('NaN'))
+	Traceback (most recent call last):
+	TypeError: x must be an integer
+
