@@ -12,6 +12,9 @@ integer
 	>>> bgeo = BaseGeometry()
 	>>> bgeo.integer_validator("lenght", 5)
 
+	>>> bgeo = BaseGeometry()
+	>>> bgeo.integer_validator("lenght", 50000000)
+
 =================
 missing arguments
 =================
@@ -30,6 +33,11 @@ missing arguments
 	>>> bgeo.integer_validator("x")
 	Traceback (most recent call last):
 	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+	>>> bgeo = BaseGeometry()
+	>>> bgeo.integer_validator(1, 2, 3)
+	Traceback (most recent call last):
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
 =========================
 value not int or negative
@@ -51,6 +59,11 @@ value not int or negative
 	TypeError: x must be an integer
 
 	>>> bgeo = BaseGeometry()
+	>>> bgeo.integer_validator("x", False)
+	Traceback (most recent call last):
+	TypeError: x must be an integer
+
+	>>> bgeo = BaseGeometry()
 	>>> bgeo.integer_validator("x", -3)
 	Traceback (most recent call last):
 	ValueError: x must be greater than 0
@@ -59,6 +72,7 @@ value not int or negative
 	>>> bgeo.integer_validator("x", 0)
 	Traceback (most recent call last):
 	ValueError: x must be greater than 0
+
 
 =====================
 area not implemented
