@@ -4,6 +4,23 @@ import module
 
 	>>> MyList = __import__('1-my_list').MyList
 
+=============
+documentation
+=============
+
+	>>> module_doc = __import__('1-my_list').__doc__
+	>>> print(len(module_doc) > 0)
+	True
+
+	>>> class_doc = __import__('1-my_list').MyList.__doc__
+	>>> print(len(class_doc) > 0)
+	True
+
+	>>> function_doc = __import__('1-my_list').MyList.print_sorted.__doc__
+	>>> print(len(function_doc) > 0)
+	True
+
+
 SUCCESS CASES
 =================
 int elements, not empty
