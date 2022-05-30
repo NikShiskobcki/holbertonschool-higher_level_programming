@@ -4,6 +4,26 @@ import module
 
 	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+==========
+documentation
+=============
+
+	>>> module_doc = __import__('7-base_geometry').__doc__
+	>>> print(len(module_doc) > 0)
+	True
+
+	>>> class_doc = __import__('7-base_geometry').BaseGeometry.__doc__
+	>>> print(len(class_doc) > 0)
+	True
+
+	>>> function_doc = __import__('7-base_geometry').BaseGeometry.area.__doc__
+	>>> print(len(function_doc) > 0)
+	True
+
+	>>> function_doc = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+	>>> print(len(function_doc) > 0)
+	True
+
 SUCCESS CASES
 =================
 integer
@@ -64,9 +84,7 @@ value not int or negative
 	TypeError: x must be an integer
 
 	>>> bgeo = BaseGeometry()
-	>>> bgeo.integer_validator("x", float('inf'))
-	Traceback (most recent call last):
-	TypeError: x must be an integer
+	
 
 	>>> bgeo = BaseGeometry()
 	>>> bgeo.integer_validator("x", -3)
