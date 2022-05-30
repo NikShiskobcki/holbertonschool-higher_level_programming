@@ -31,9 +31,9 @@ missing arguments
 	Traceback (most recent call last):
 	TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-===================
-value not int
-===================
+=========================
+value not int or negative
+==========================
 
 	>>> bgeo = BaseGeometry()
 	>>> bgeo.integer_validator("x", 2.5)
@@ -50,3 +50,21 @@ value not int
 	Traceback (most recent call last):
 	TypeError: x must be an integer
 
+	>>> bgeo = BaseGeometry()
+	>>> bgeo.integer_validator("x", -3)
+	Traceback (most recent call last):
+	ValueError: x must be greater than 0
+
+	>>> bgeo = BaseGeometry()
+	>>> bgeo.integer_validator("x", 0)
+	Traceback (most recent call last):
+	ValueError: x must be greater than 0
+
+=====================
+area not implemented
+=====================
+
+	>>> bgeo = BaseGeometry()
+	>>> bgeo.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
