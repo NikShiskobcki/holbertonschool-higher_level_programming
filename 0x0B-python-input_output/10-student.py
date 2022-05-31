@@ -18,5 +18,6 @@ class Student:
             for i in attrs:
                 if i in self.__dict__:
                     res[i] = self.__dict__[i]
+            return res
         else:
-            return dict(self.__dict__)
+            return self.__dict__
