@@ -13,7 +13,7 @@ class Student:
 
     def to_json(self, attrs=None):
         """retrieves dict representation"""
-        if tyoe(attrs) is list:
+        if type(attrs) is list:
             res = {}
             for i in attrs:
                 if i in self.__dict:
