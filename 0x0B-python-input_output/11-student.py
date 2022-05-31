@@ -13,13 +13,14 @@ class Student:
 
     def to_json(self, attrs=None):
         """retrieves dict representation"""
-        if tyoe(attrs) is list:
+        if type(attrs) is list:
             res = {}
             for i in attrs:
-                if i in self.__dict:
-                    res[i] = self.dict[i]
+                if i in self.__dict__:
+                    res[i] = self.__dict__[i]
+            return res
         else:
-            return dict(self.__dict__)
+            return self.__dict_
 
     def reload_from_json(self, json):
         """replaces all attributes of student"""
