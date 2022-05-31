@@ -16,7 +16,7 @@ class Student:
         if type(attrs) is list:
             res = {}
             for i in attrs:
-                if i in self.__dict:
-                    res[i] = self.dict[i]
+                if i in self.__dict__:
+                    res[i] = self.__dict__[i]
         else:
             return dict(self.__dict__)
