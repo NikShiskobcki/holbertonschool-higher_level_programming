@@ -20,7 +20,7 @@ class Student:
                     res[i] = self.__dict__[i]
             return res
         else:
-            return self.__dict_
+            return self.__dict__
 
     def reload_from_json(self, json):
         """replaces all attributes of student"""
