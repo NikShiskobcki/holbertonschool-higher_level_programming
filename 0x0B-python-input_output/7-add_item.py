@@ -10,7 +10,7 @@ filename = "add_item.json"
 try:
     l = load_from_json_file(filename)
 except FileNotFoundError:
-    lista = []
+    l = []
 
-res = lista + argv[1:]
-save_to_json_file(res, filename)
+r = l + argv[1:]
+save_to_json_file(r, filename)
