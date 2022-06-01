@@ -4,6 +4,7 @@
 
 def append_after(filename="", search_string="", new_string=""):
     """appends after string"""
+    txt = ""
     with open(filename, 'r') as f:
         for line in f:
             txt += line
