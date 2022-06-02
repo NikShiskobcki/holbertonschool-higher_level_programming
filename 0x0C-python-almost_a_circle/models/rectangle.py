@@ -9,22 +9,23 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """init"""
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     def integer_validator(self, name, value):
         """validates value"""
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
+        if name == "x" or name == "y":
+            if type(value) is not int:
+                raise TypeError("{} must be an integer".format(name))
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(name))
         else:
-            if name == "x" or name == "y":
-                if value < 0:
-                    raise TypeError("{} must be >= 0".format(name))
-            elif name == "width" or name == "height":
-                if value <= 0:
-                    raise ValueError("{} must be > 0".format(name))
+            if type(value) is not int:
+                raise TypeError("{} must be an integer".format(name))
+            if value <= 0:
+                raise ValueError("{} must be > 0".format(name))
 
     @property
     def width(self):
