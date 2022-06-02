@@ -88,4 +88,18 @@ class Rectangle(Base):
 
     def __str__(self):
         """returns data of rectangle"""
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height))
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format
+                (self.id, self.__x, self.__y, self.__width, self.__height))
+
+    def update(self, *args):
+        """updates attributes"""
+        le = len(args) - 1
+        self.id = args[0]
+        if le >= 1:
+            self.width = args[1]
+        if le >= 2:
+            self.height = args[2]
+        if le >= 3:
+            self.x = args[3]
+        if le >= 4:
+            self.y = args[4]
