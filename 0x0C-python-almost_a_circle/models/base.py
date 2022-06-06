@@ -71,4 +71,3 @@ class Base():
         for j in lst:
             aux.append(cls.create(**j))
         return aux
-
