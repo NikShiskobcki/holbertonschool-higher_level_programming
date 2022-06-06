@@ -98,7 +98,7 @@ class Rectangle(Base):
             for a, b in enumerate(args):
                 setattr(self, key[a], b)
         else:
-            for a,b in kwargs.items():
+            for a, b in kwargs.items():
                 setattr(self, a, b)
 
     def to_dictionary(self):
