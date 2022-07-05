@@ -1,2 +1,2 @@
 -- prints full description of table
-DESC first_table;
+SHOW TABLE STATUS LIKE 'first_table';
