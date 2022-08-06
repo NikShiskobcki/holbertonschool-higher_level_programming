@@ -11,6 +11,6 @@ if __name__ == "__main__":
     session = Session(bind=engine)
     session.execute(
             update(State).
-            where(State.id == 2)
+            where(State.id == 2).
             values(name="New Mexico"))
     session.commit()
