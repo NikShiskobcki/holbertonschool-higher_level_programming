@@ -12,4 +12,4 @@ if __name__ == "__main__":
     session = Session(bind=engine)
     for stat, cit in session.query(State, City).filter(
             State.id == City.state_id):
-                print("{}: ({}) {}".format(stat.name, cit.id, cit.name))
+        print("{}: ({}) {}".format(stat.name, cit.id, cit.name))
