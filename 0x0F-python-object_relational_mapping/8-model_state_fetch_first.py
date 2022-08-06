@@ -1,21 +1,17 @@
 #!/usr/bin/python3
 
 from sys import argv
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 from model_state import Base, State
 
 from sqlalchemy import create_engine
 
-USER = argv[1]
-PASS = argv[2]
-DB = argv[3]
+
 
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                            .format(USER, PASS, DB))
-    Base.metadata.create_all(engine)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    engine = create_engine(
+        f"mysql://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}")
+    session = Session(bind=engine)
     ans = session.query(State).order_by(State.id).first()
     if (ans is not None):
         print('{}: {}'.format(ans.id, ans.name))
