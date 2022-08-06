@@ -12,7 +12,11 @@ if __name__ == "__main__":
 try:
     db = MySQLdb.connect(host=MY_HOST, user=MY_USER, passwd=MY_PASS, db=MY_DB)
     cur = db.cursor()
-    cur.execute("SELECT cities.name FROM cities LEFT JOIN states ON cities.state_id = states.id WHERE states.name=%s  ORDER BY cities.id ASC", (STATE_NAME,))
+    cur.execute("""SELECT cities.name
+                FROM cities LEFT JOIN states ON cities.state_id = states.id
+                WHERE states.name=%s
+                ORDER BY cities.id ASC
+                """, (STATE_NAME,))
     rows = cur.fetchall()
     ans = []
     for row in rows:
@@ -22,4 +26,3 @@ try:
 
 except Exception:
     print("ERROR")
-
