@@ -13,7 +13,7 @@ try:
     db = MySQLdb.connect(host=MY_HOST, user=MY_USER, passwd=MY_PASS, db=MY_DB)
     cur = db.cursor()
     cur.execute("""
-                SELECT * FROM states 
+                SELECT * FROM states
                 WHERE name like %s
                 ORDER BY states.id ASC
                 """, (NAME,))
