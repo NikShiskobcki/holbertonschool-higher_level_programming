@@ -11,7 +11,9 @@ if __name__ == "__main__":
 try:
     db = MySQLdb.connect(host=MY_HOST, user=MY_USER, passwd=MY_PASS, db=MY_DB)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
+    cur.execute("SELECT * FROM states "
+                "WHERE name LIKE BINARY 'N%' "
+                "ORDER BY states.id ASC")
     rows = cur.fetchall()
     for row in rows:
         print(row)
@@ -19,4 +21,3 @@ try:
 
 except Exception:
     print("ERROR")
-
