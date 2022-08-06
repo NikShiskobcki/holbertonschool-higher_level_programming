@@ -11,9 +11,9 @@ if __name__ == "__main__":
             f"mysql://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}")
     session = Session(bind=engine)
     ans = session.query(State).filter(State.name == argv[4]).\
-            order_by(State.id).first()
+        order_by(State.id).first()
     if (ans is not None):
         print(ans.id)
     else:
-        print("Not Found")
+        print("Not found")
     session.close()
