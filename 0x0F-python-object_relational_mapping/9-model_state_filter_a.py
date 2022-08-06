@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""module"""
 from sys import argv
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
