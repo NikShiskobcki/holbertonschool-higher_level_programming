@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """adds state"""
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, update
 from sqlalchemy.orm import Session
 from model_state import Base, State
 from sys import argv
