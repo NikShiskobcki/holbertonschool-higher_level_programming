@@ -13,7 +13,7 @@ try:
     db = MySQLdb.connect(host=MY_HOST, user=MY_USER, passwd=MY_PASS, db=MY_DB)
     cur = db.cursor()
     query = """SELECT * FROM states
-            WHERE name LIKE '{}'
+            WHERE name LIKE BINARY '{}'
             ORDER BY states.id ASC""".format(argv[4])
     cur.execute(query)
     rows = cur.fetchall()
