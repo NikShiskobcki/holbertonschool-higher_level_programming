@@ -6,7 +6,7 @@ from sys import argv
 if __name__ == "__main__":
     header = {'Authorization': "Bearer {}".format(argv[2])}
     req = requests.get("https://api.github.com/users/{}".format(argv[1]),
-                        headers=header)
+                       headers=header)
     try:
         print(req.json()['id'])
     except Exception:
