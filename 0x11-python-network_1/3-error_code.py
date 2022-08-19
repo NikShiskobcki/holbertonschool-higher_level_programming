@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""takes url, sends a request and displays body of response""" 
+"""takes url, sends a request and displays body of response"""
 import sys
 from urllib import request, error
 
